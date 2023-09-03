@@ -1,0 +1,559 @@
+IDE: CodeBlocks
+Biblioteca: #include <stdio.h>
+            #include <stdlib.h>
+Universidade Anhanguera Uberlândia
+Aluno: Pedro Antonio da Silva Alexandre & Gabriel Nascimento Barbosa
+RA: 372114867412
+Curso: Sistemas de informação - 2º Período
+
+
+Questão 1:
+
+
+      int main()
+    {
+    
+        float casaDeFrente;
+        float casaDeLado;
+        float custoMetro;
+    
+    
+               printf("Quantos metros o terreno possuiu de frente: ");
+               scanf("%f", &casaDeFrente);
+               printf("Quantos metros o terreno possuiu de lateral: ");
+               scanf("%f", &casaDeLado);
+               printf("Informe o valor do metro quadrado: ");
+               scanf("%f", &custoMetro);
+    
+          float metroQuadrado = (casaDeFrente * casaDeLado);
+    
+               printf("\nArea total do terreno de %.2f mts de frente com %.2f mts de lateral e: %.2f mts\n",
+                      casaDeFrente, casaDeLado, metroQuadrado);
+               printf("O valor deste terreno e: %.2f\n\n", (metroQuadrado * custoMetro) );
+       
+        return 0;
+    }
+
+
+Questão 2:
+
+
+      int main()
+      {
+          float salarioMin;
+          printf("Informe o valor do salario minino: ");
+          scanf("%f", &salarioMin);
+      
+          float salarioFun;
+          printf("Informe o valor do salario do funcionario: ");
+          scanf("%f", &salarioFun);
+      
+          float salario = (salarioFun / salarioMin);
+          printf("\nO funcionario recebe %.1f salarios minimos!\n", salario);
+            
+          return 0;
+      }
+
+
+Questão 3:
+
+
+      int main()
+      {
+      
+         float nota1;
+         float nota2;
+         float nota3;
+      
+         printf("Informe a nota 1: ");
+         scanf("%f", &nota1);
+      
+         printf("Informe a nota 2: ");
+         scanf("%f", &nota2);
+      
+         printf("Informe a nota 3: ");
+         scanf("%f", &nota3);
+      
+      
+         float media = (nota1 * 1) + (nota2 * 2) + (nota3 * 3);
+         float mediap = media/6;
+      
+         printf("\nA media ponderada das notas %.2f, %.2f, %.2f e: %.2f", nota1, nota2, nota3, mediap);
+      
+             return 0;
+      }
+
+
+Questão 4:
+
+
+      int main()
+      {
+         int num1;
+         int soma;
+         int mult;
+         float divi;
+         int sub;
+      
+             printf("Informe o numero para o calculo da tabuada: ");
+             scanf("%d", &num1);
+             printf("\nTabuada do + e - para o numero %d:", num1);
+      
+                      for(int num2 = 0; num2<10; num2++)
+                      {
+                      soma = num1 + num2;
+                      sub = num1 - num2;
+                      printf("\n%d + %d = %d     ", num1,num2, soma);
+                      printf("%d - %d = %d", num1,num2,abs(sub));
+                  }
+      
+             printf("\n\nTabuada do * e / para o numero %d: ", num1);
+      
+                      for(float num2 = 0; num2<10; num2++)
+                      {
+      
+                      mult = num1 * num2;
+                      divi = num1 / num2;
+                      printf("\n%d * %1.f = %d     ", num1,num2, mult);
+                      printf("%d / %1.f = %.2f", num1,num2,divi);
+      
+                      }
+      
+             printf("\n");
+      
+          return 0;
+      }
+
+
+Questão 5:
+
+
+      int main()
+      {
+          int val1;
+          int val2;
+      
+              printf("Informe o valor 1: ");
+              scanf("%i", &val1);
+      
+              printf("Informe o valor 2: ");
+              scanf("%i", &val2);
+      
+              printf("\nA divisao de %i por %i = %.2f \n", val1, val2, (val1/(float)val2));
+      
+          return 0;
+      }
+
+
+Questão 6:
+
+
+      int main()
+      {
+          int cavalo;
+          float valorFe;
+      
+      
+              printf("Informe a quantidade de cavalos: ");
+              scanf("%i", &cavalo);
+      
+          int totalFe = cavalo*4;
+      
+              printf("Informe o valor de cada ferradura: R$ ");
+              scanf("%f", &valorFe);
+      
+              printf("\nA quantidade de ferraduras necessarias: %i \n", totalFe);
+              printf("Valor total para a compra das ferraduras: R$ %.2f \n", (totalFe*valorFe));
+      
+          return 0;
+      }
+
+
+Questão 7:
+
+
+      int main()
+      {
+          float peso;
+      
+              printf("Informe o pedo em KG: ");
+              scanf("%f", &peso);
+              printf("\n");
+      
+          printf("Caso a pessoa engorde 15%% ficara com: %.2f kg\n", (peso+(peso*0.15)));
+          printf("Caso a pessoa engorde 20%% ficara com: %.2f kg\n", (peso+(peso*0.20)));
+      
+          return 0;
+      }
+
+
+Questão 8:
+
+
+      int main()
+      {
+          float sal, salNew,fgts,inss;
+          fgts = 0.08;
+          inss = 0.11;
+      
+      
+                  printf("Informe o salario: R$");
+                  scanf("%f", &sal);
+      
+                  printf("\nSalario Inicial: R$ %.2f", sal);
+      
+                  salNew = sal+(sal*0.15);
+      
+                  printf("\nSalario Reajustado: R$%.2f", salNew);
+                  printf("\nDesconto 11%% INSS: R$%.2f", (salNew*inss));
+                  printf("\nDesconto 8%% FGTS: R$%.2f", (salNew*fgts));
+                  printf("\nTotal de descontos: R$%.2f", (salNew*inss)+(salNew*fgts));
+                  printf("\nSalario Final: R$%.2f\n", (salNew-((salNew*inss)+(salNew*fgts))));
+      
+      
+          return 0;
+      }
+
+
+Questão 9:
+
+
+      int main()
+      {
+      
+          int trap1, trap2, trap3;
+          int qua;
+          int ret1, ret2;
+          int cir;
+          int tri1, tri2;
+      
+                  printf("Area do trapezio:\n");
+                  printf("Informe o valor da base maior: ");
+                  scanf("%i", &trap1);
+                  printf("Informe o valor da base menor: ");
+                  scanf("%i", &trap2);
+                  printf("Informe o valor da altura: ");
+                  scanf("%i", &trap3);
+                  printf("A area do trapezio e: %.2f\n\n", (float)((((trap1+trap2)*trap3)/2)));
+      
+                  printf("Area do quadrado: \n");
+                  printf("Informe o valor de um dos lados: ");
+                  scanf("%i", &qua);
+                  printf("A area do quadrado e: %.2f \n\n", (float)qua*4);
+      
+                  printf("Area do retangulo: \n");
+                  printf("Informe o valor da largura: ");
+                  scanf("%i", &ret1);
+                  printf("Informe o valor da altura: ");
+                  scanf("%i", &ret2);
+                  printf("A area do retangulo e: %.2f\n\n", (float)(ret1*ret2));
+      
+                  printf("Area do circulo: \n");
+                  printf("Informe o valor do raio: ");
+                  scanf("%i", &cir);
+                  printf("A area do circulo e: %.2f\n\n", (float)((cir*cir)*3.14));
+      
+                  printf("Area do triangulo: \n");
+                  printf("Informe o valor da base: ");
+                  scanf("%i", &tri1);
+                  printf("Informe o valor da altura: ");
+                  scanf("%i", &tri2);
+                  printf("A area do triangulo e: %.2f\n", (float)(tri1*tri2)/2);
+      
+          return 0;
+      }
+
+
+Questão 10:
+
+
+      int main()
+      {
+          int anoNasc;
+          int anoAtual;
+      
+      
+          printf("Digite seu ano de nascimento: ");
+          scanf("%i", &anoNasc);
+      
+         printf("Digite ano em que estamos: ");
+          scanf("%i", &anoAtual);
+      
+         int idade = anoAtual-anoNasc;
+      
+         printf("\nA idade dessa pessoa em: \n");
+         printf("Anos: %i\n", idade);
+         printf("Meses: %i\n", (idade*12));
+         printf("Dias: %i\n", (idade*12*30));
+         printf("Semanas: %i\n", (idade*12*4));
+      
+          return 0;
+      
+      }
+
+
+Questão 11:
+
+
+      int main()
+      {
+          float suco;
+      
+      
+                  printf("Digite a quantidade de suco em Litros que deseja produzir: ");
+                  scanf("%f", &suco);
+      
+          float maracuja = (suco*0.2);
+          float agua = (suco*0.8);
+      
+                  printf("\nSera necessario %.2f L de Agua, e %.2f L de suco concentrado de maracuja para produzir %.2f L de suco!\n", agua, maracuja, suco);
+      
+          return 0;
+      }
+
+
+Questão 12:
+
+
+      int main()
+      {
+      
+          int frango;
+      
+      
+      
+          printf("Digite a quantidade de frangos: ");
+          scanf("%i", &frango);
+      
+          int anelId = (frango*4);
+          int anelAl = (frango*7);
+      
+          printf("\nO valor total para identificar os frangos e: R$ %.2f\n", (float)(anelAl+anelId));
+      
+      
+          return 0;
+      }
+
+
+Questão 13:
+
+
+      int main()
+      {
+          int var1;
+          int var2;
+          int var3;
+      
+          printf("Digite a quantidade de latas de 350ml: ");
+          scanf("%i", &var1);
+      
+          printf("Digite a quantidade de garrafas de 600ml: ");
+          scanf("%i", &var2);
+      
+          printf("Digite a quantidade de garrafas de 2L: ");
+          scanf("%i", &var3);
+      
+      
+          float l350 = 0.350*var1;
+          float g600 = 0.600*var2;
+          float g2 = 2*var3;
+      
+          printf("\nA quantidade total de litros comprada foi de: %.2f\n", (l350+g600+g2));
+      
+          return 0;
+      }
+
+
+Questão 14:
+
+
+      int main()
+      {
+      
+          int sand;
+      
+          printf("Digite a quantidade de sanduiches: ");
+          scanf("%i", &sand);
+      
+          float muss = (sand*0.100);
+          float pres = (sand*0.050);
+          float carn = (sand*0.120);
+      
+          printf("\nPara produzir %i de sanduiches, serao necessarios:\n\n", sand);
+          printf("%.2f kgs de mussarela\n", muss);
+          printf("%.2f kgs de presunto\n", pres);
+          printf("%.2f kgs de carne\n", carn);
+      
+          return 0;
+      }
+
+
+Questão 15:
+
+
+      #include <locale.h>
+      
+      int main()
+      {
+      
+          setlocale(LC_ALL,"Portuguese");
+      
+      
+          int normalHr;
+          int extraHr;
+          int dep;
+      
+          printf("Digite a quantidade total de horas normais: ");
+          scanf("%i", &normalHr);
+      
+          printf("Digite a quantidade total de horas extras: ");
+          scanf("%i", &extraHr);
+      
+          printf("Digite a quantidade total de dependentes menores que 6 anos de idade: ");
+          scanf("%i", &dep);
+      
+          float valorHr = normalHr*10;
+          float valorEx = extraHr*15;
+          float valorDep = dep*90;
+          float salLiq = (valorHr-(valorHr*0.11));
+      
+          printf("\nHoras normais: R$ %.2f", valorHr);
+          printf("\nAdicional de Horas extras: R$ %.2f", valorEx);
+          printf("\nAdicional de Dependentes: R$ %.2f", valorDep);
+          printf("\nSalário líquido (Hrs normais - desconto): %.2f ", salLiq);
+          printf("\nSalário final: %.2f \n",salLiq+valorDep+valorEx);
+      
+          return 0;
+      }
+
+
+Questão 16:
+
+
+      #include <locale.h>
+      
+      int main()
+      {
+          setlocale(LC_ALL,"Portuguese");
+      
+          float vendaPassada;
+          float prod1 = 150;
+          float prod2 = 220;
+          float prod3 = 97;
+      
+              printf("Digite o valor do faturamento do mês anterior: R$ ");
+              scanf("%f", &vendaPassada);
+      
+          float meta = vendaPassada+(vendaPassada*0.20);
+          float diferenca = (meta-vendaPassada);
+      
+              printf("\nA meta do próximo mês é de: R$ %.2f", meta);
+              printf("\nUm aumento de: R$ %.2f", diferenca);
+              printf("\nQuantidade de peças a mais a serem vendidas para atigirmos a meta: \n\n");
+      
+              printf("Produto 1: %.2f\n", (diferenca/prod1));
+              printf("Produto 2: %.2f\n", (diferenca/prod2));
+              printf("Produto 3: %.2f\n", (diferenca/prod3));
+      
+      
+          return 0;
+      }
+
+
+Questão 17:
+
+
+      int main()
+      {
+          int pao;
+          int broa;
+          float reforma;
+          float valorPao = 0.12;
+          float valorBroa = 1.60;
+      
+              printf("Digite a quantidade em unidades de paes vendidos: ");
+              scanf("%i", &pao);
+              printf("Digite a quantidade em unidades de broas vendidas: ");
+              scanf("%i", &broa);
+              printf("Digite o valor da reforma: R$ ");
+              scanf("%f", &reforma);
+      
+          float vendaDia = (pao*valorPao)+(broa*valorBroa);
+      
+              printf("\nFaturamento com a venda de broas: R$ %.2f", (float)(broa*valorBroa));
+              printf("\nFaturamento com a venda de paes: R$ %.2f", (float)(pao*valorPao));
+              printf("\nFaturamento diario (paes + broas): R$ %.2f", vendaDia);
+              printf("\nValor para deposito na poupanca (10%%): R$ %.2f", (vendaDia*0.10));
+              printf("\nPara pagar a reforma serao necessarios: %.0f dias\n", ceil(reforma/(vendaDia*0.10)));
+      
+          return 0;
+      }
+
+
+Questão 18:
+
+
+      int main()
+      {
+          float conta;
+      
+               printf("Informe o valor da conta: R$ ");
+               scanf("%f", &conta);
+      
+          float contapor3 = (conta/3);
+          int contaInteira = (conta/3);
+          float centavos = (contapor3-contaInteira);
+      
+          int Carlos = contaInteira;
+          int Andre = contaInteira;
+          int Felipe = contaInteira;
+          float FelipeTotal = (Felipe+(centavos*3));
+      
+          printf("\nCarlos pagara: R$ %i\nAndre pagara: R$ %i\nFelipe pagara: R$ %.2f\n", Carlos, Andre, FelipeTotal);
+      
+          return 0;
+      }
+
+
+Questão 19:
+
+
+      int main()
+      {
+          int dia;
+          int mes;
+      
+              printf("Digite o dia em que estamos: ");
+              scanf("%i", &dia);
+              printf("Digite o mes em que estamos: ");
+              scanf("%i", &mes);
+      
+          int mesDia = (mes*30);
+      
+              printf("\nA quantidade de dias que se passaram foi de: %i dias\n", (dia+mesDia));
+          return 0;
+      
+      }
+
+
+Questão 20:
+
+
+      int main()
+      {
+          int numero;
+      
+          printf("Digite um numero de 4 digitos: ");
+          scanf("%i",&numero);
+      
+          int milhar,centena,dezena,unidade;
+      
+          milhar = numero/1000;
+          centena = ((numero%1000)/100);
+          dezena = ((numero%100)/10);
+          unidade = (numero%10);
+      
+          printf("\nMilhar: %i\nCentena: %i\nDezena: %i\nUnidade: %i\n",milhar,centena,dezena,unidade);
+      
+          return 0;
+      }
