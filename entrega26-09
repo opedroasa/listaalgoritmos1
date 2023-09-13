@@ -1,0 +1,170 @@
+IDE: CodeBlocks
+Universidade Anhanguera Uberlândia
+Aluno: Pedro Antonio da Silva Alexandre & Gabriel Nascimento Barbosa
+RA: 372114867412
+Curso: Sistemas de informação - 2º Período
+
+Questão 1:
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    int main()
+    {
+        float frente, lado, valorMetro;
+    
+            printf("Quantos metros o terreno possui de frente: ");
+            scanf("%f", &frente);
+            printf("Quantos metros o terreno possui de lado: ");
+            scanf("%f", &lado);
+            printf("Informe o valor do metro quadrado: ");
+            scanf("%f", &valorMetro);
+    
+        float areaTotal = (frente*lado);
+        float valor = (valorMetro*areaTotal);
+        float diferenca = (fabs(frente-lado));
+    
+            printf("\nA area total do terreno de %.2f mts de frente com %.2f mts de lateral e de %.2f mts", frente, lado, areaTotal);
+    
+            if(diferenca<10){
+                float valorNovo = (valor+(valor*0.22));
+                printf("\nO terreno recebeu acrescimo de 22%% e custara: R$ %.2f\n", valorNovo);
+            }
+            else if(diferenca<40&&diferenca>10){
+                float valorNovo = valor-(valor*0.12);
+                printf("\n\nO terreno recebeu decrescimo de 12%% e custara: R$ %.2f\n", valorNovo);
+            }
+            else if (diferenca>70){
+                float valorNovo = valor-(valor*0.15);
+                printf("\n\nO terreno recebeu decrescimo de 15%% e custara: R$ %.2f\n", valorNovo);
+            }
+            else {
+                printf("\n\nO terreno custara: R$ %.2f\n", valor);
+            }
+    
+        return 0;
+    }
+
+
+Questão 2:
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    int main()
+    {
+        float salario, salarioMin;
+    
+            printf("Informe o valor do salario minimo: ");
+            scanf("%f", &salarioMin);
+            printf("Informe o valor do salario do funcionario: ");
+            scanf("%f", &salario);
+    
+        if (salario<salarioMin){
+            printf("\n\nO funcionario recebe menos de um salario minino!\n");
+        }
+        else {
+            printf("\n\nO funcionario recebe %.1f salarios mininos!\n", (salario/salarioMin));
+        }
+    
+        return 0;
+    }
+
+Questão 3:
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    int main()
+    {
+        float valor1, valor2, valor3;
+    
+            printf("Informe o valor da primeira nota: ");
+            scanf("%f",&valor1);
+            printf("Informe o valor da segunda nota: ");
+            scanf("%f",&valor2);
+            printf("Informe o valor da terceira nota: ");
+            scanf("%f",&valor3);
+    
+        float nota1=(1*valor1),nota2=(2*valor2),nota3=(3*valor3);
+        float mediaP = ((nota1+nota2+nota3)/6);
+    
+            printf("\nA media ponderada das notas %.2f, %.2f e %.2f e de *%.2f*",valor1,valor2,valor3,mediaP);
+            if(nota1>nota2&&nota1>nota3){
+                printf("\nA nota 1 (%.2f) e a maior apos o calculo do peso 1 (%.2f)",valor1, nota1);
+            }
+            else if (nota2>nota1&&nota2>nota3){
+                printf("\nA nota 2 (%.2f) e a maior apos o calculo do peso 2 (%.2f)",valor2, nota2);
+            }
+            else if (nota3>nota1&&nota3>nota2){
+                printf("\nA nota 3 (%.2f) e a maior apos o calculo do peso 3 (%.2f)",valor3, nota3);
+            }
+            else if (nota1>nota2&&nota1==nota3){
+                printf("\nA nota 1 (%.2f) e a a nota 3 (%.2f) foram as maiores notas apos o calculo do peso 1 (%.2f) e do peso 3 (%.2f)", valor1,valor3,nota1,nota3);
+            }
+            else if (nota1>nota3&&nota1==nota2){
+                 printf("\nA nota 1 (%.2f) e a a nota 2 (%.2f) foram as maiores notas apos o calculo do peso 1 (%.2f) e do peso 2 (%.2f)", valor1,valor2,nota1,nota2);
+            }
+            else if (nota2>nota1&&nota2==nota3){
+                printf("\nA nota 2 (%.2f) e a a nota 3 (%.2f) foram as maiores notas apos o calculo do peso 2 (%.2f) e do peso 3 (%.2f)", valor2,valor3,nota2,nota3);
+            }
+            else {
+                printf("\nAs tres notas foram iguais");
+            }
+    
+    
+        return 0;
+    }
+
+Questão 4:
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    int main()
+    {
+        int numero,numero2;
+        char operacao;
+        float resultado;
+    
+            printf("Informe a operacao desejada [+,-,*,/]: ");
+            scanf("%c",&operacao);
+            printf("Informe o numero para calculo da tabuada: ");
+            scanf("%i",&numero);
+    
+        if(operacao=='+'){
+            printf("\nTabuada do %c para o numero %i:\n",operacao,numero);
+            for(numero2=0;numero2<11;numero2++){
+                 resultado = (numero+numero2);
+                 printf("\n%i %c %i = %.f", numero,operacao,numero2,resultado);
+            }
+        }
+        else if(operacao=='-'){
+            printf("\nTabuada do %c para o numero %i:\n",operacao,numero);
+            for(numero2=0;numero2<11;numero2++){
+                 resultado = abs(numero-numero2);
+                 printf("\n%i %c %i = %.f", numero,operacao,numero2,resultado);
+            }
+        }
+        else if(operacao=='*'){
+            printf("\nTabuada do %c para o numero %i:\n",operacao,numero);
+            for(numero2=0;numero2<11;numero2++){
+                 resultado = (numero*numero2);
+                 printf("\n%i %c %i = %.f", numero,operacao,numero2,resultado);
+            }
+        }
+        else if(operacao=='/'){
+            printf("\nTabuada do %c para o numero %i:\n",operacao,numero);
+            printf("\n%i %c 0 = %i nao possui divisao por 0",numero,operacao,numero);
+            for(numero2=1;numero2<11;numero2++){
+                 resultado =((float)numero/(float)numero2);
+                 printf("\n%i %c %i = %.2f", numero,operacao,numero2,resultado);
+            }
+        }
+        else{
+            printf("\nOperacao (%c) nao e valida!",operacao);
+        }
+           return 0;
+}
+
+Questão 5:
