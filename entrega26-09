@@ -168,3 +168,72 @@ Questão 4:
 }
 
 Questão 5:
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int numero1,numero2;
+        
+                printf("Informe o valor 1: ");
+                scanf("%i", &numero1);
+                printf("Informe o valor 2: ");
+                scanf("%i", &numero2);
+        
+        
+            if(numero2==0||numero1==0){
+                printf("\nA operacao nao pode ser realizada.\n");
+            }
+            else if(numero1>=numero2){
+                float div = (float)(numero1/(float)(numero2));
+                printf("\nA divisao de %i por %i e de %.2f\n",numero1,numero2,div);
+            }
+            else{
+                float div = (float)(numero2/(float)numero1);
+                printf("\nA divisao de %i por %i e de %.2f\n",numero2,numero1,div);
+            }
+        
+            return 0;
+        }
+
+Questão 6:
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int cavalos;
+            float valorFerradura;
+        
+                printf("Informe a quantidade de cavalos: ");
+                scanf("%i",&cavalos);
+                printf("Informe o valor de cada ferradura: ");
+                scanf("%f",&valorFerradura);
+        
+            int ferraduraCavalo = (cavalos*4);
+            float valorTotalFerradura = (ferraduraCavalo*valorFerradura);
+        
+                printf("\nA quantidade de ferraduras necessarias e de: %i",ferraduraCavalo);
+        
+                if (valorTotalFerradura>15000.01&&valorTotalFerradura<20000.00){
+                    printf("\nValor total para a compra das ferraduras com 10%% de desconto e de : R$ %.2f\n", (valorTotalFerradura-(valorTotalFerradura*0.10)));
+                    }
+                else if (valorTotalFerradura>20000.01&&valorTotalFerradura<25000.00){
+                    printf("\nValor total para a compra das ferraduras com 12%% de desconto e de : R$ %.2f\n", (valorTotalFerradura-(valorTotalFerradura*0.12)));
+                    }
+                else if (valorTotalFerradura>25000.01&&valorTotalFerradura<30000.00){
+                    printf("\nValor total para a compra das ferraduras com 15%% de desconto e de : R$ %.2f\n", (valorTotalFerradura-(valorTotalFerradura*0.15)));
+                    }
+                 else if (valorTotalFerradura>30000.01){
+                    printf("\nValor total para a compra das ferraduras com 20%% de desconto e de : R$ %.2f\n", (valorTotalFerradura-(valorTotalFerradura*0.20)));
+                    }
+                 else {
+                    printf("\nValor total para a compra das ferraduras e de : R$ %.2f\n",valorTotalFerradura);
+                    }
+        
+            return 0;
+        }
+
+Questão 7:
