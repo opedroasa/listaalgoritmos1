@@ -6,6 +6,7 @@ Curso: Sistemas de informação - 2º Período
 
 Questão 1:
 
+
     #include <stdio.h>
     #include <stdlib.h>
     
@@ -48,6 +49,7 @@ Questão 1:
 
 Questão 2:
 
+
     #include <stdio.h>
     #include <stdlib.h>
     
@@ -70,7 +72,9 @@ Questão 2:
         return 0;
     }
 
+
 Questão 3:
+
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -116,7 +120,9 @@ Questão 3:
         return 0;
     }
 
+
 Questão 4:
+
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -167,7 +173,9 @@ Questão 4:
            return 0;
 }
 
+
 Questão 5:
+
 
         #include <stdio.h>
         #include <stdlib.h>
@@ -197,7 +205,9 @@ Questão 5:
             return 0;
         }
 
+
 Questão 6:
+
 
         #include <stdio.h>
         #include <stdlib.h>
@@ -236,4 +246,166 @@ Questão 6:
             return 0;
         }
 
+
 Questão 7:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int peso;
+        
+                printf("Informe seu peso em KG: ");
+                scanf("%i", &peso);
+        
+            float quinze=(peso+(peso*0.15)),vinte=(peso+(peso*0.20)),diferenca=(fabs(quinze-vinte));
+        
+                    printf("\nCaso voce engorde 15%% ficara com: %.2f KG",quinze);
+                    printf("\nCaso voce engorde 20%% ficara com: %.2f KG",vinte);
+        
+            if(diferenca>=4.5){
+                    printf("\nVoce precisa de um nutricionista!\n");
+            }
+        
+            return 0;
+        }
+
+
+Questão 8:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            float salarioBase;
+        
+                printf("Informe seu salario: R$ ");
+                scanf("%f",&salarioBase);
+        
+            float salarioNovo = (salarioBase+(salarioBase*0.05)), inss = (salarioNovo*0.11), fgts = (salarioNovo*0.08),reajuste = (salarioNovo-salarioBase),salarioLiq=(salarioNovo-(fgts+inss));
+        
+                printf("\nSalario inicial: R$ %.2f\nSalario Reajustado: R$ %.2f\nDesconto de 11%% do INSS: R$ %.2f\nDesconto de 8%% do FGTS: %.2f\n",salarioBase,salarioNovo,inss,fgts);
+        
+            if(salarioNovo<=1903.98){
+                printf("Desconto IR: 0.00\nTotal de descontos INSS+FGTS+IR: R$ %.2f\nSalario Final: R$ %.2f\n",(inss+fgts),salarioLiq);
+            }else if(salarioNovo>1903.98&&salarioNovo<=2826.65){
+                float impostoRenda = (salarioNovo*0.075);
+                printf("Desconto IR: %.2f\nTotal de descontos INSS+FGTS+IR: R$ %.2f\nSalario Final: R$ %.2f\n",impostoRenda,((inss+fgts)+impostoRenda),(salarioLiq-impostoRenda));
+            }else if(salarioNovo>2826.65&&salarioNovo<=3751.05){
+                float impostoRenda = (salarioNovo*0.15);
+                printf("Desconto IR: %.2f\nTotal de descontos INSS+FGTS+IR: R$ %.2f\nSalario Final: R$ %.2f\n",impostoRenda,((inss+fgts)+impostoRenda),(salarioLiq-impostoRenda));
+            }else if(salarioNovo>3751.05&&salarioNovo<=4664.68){
+                float impostoRenda = (salarioNovo*0.225);
+                printf("Desconto IR: %.2f\nTotal de descontos INSS+FGTS+IR: R$ %.2f\nSalario Final: R$ %.2f\n",impostoRenda,((inss+fgts)+impostoRenda),(salarioLiq-impostoRenda));
+            }else if(salarioNovo>4664.68){
+                float impostoRenda = (salarioNovo*0.275);
+                printf("Desconto IR: %.2f\nTotal de descontos INSS+FGTS+IR: R$ %.2f\nSalario Final: R$ %.2f\n",impostoRenda,((inss+fgts)+impostoRenda),(salarioLiq-impostoRenda));
+            }
+        
+            return 0;
+        }
+
+
+Questão 9:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            float contaTotal;
+        
+                printf("Informe o valor da conta: ");
+                scanf("%f",&contaTotal);
+        
+            float conta3 = (contaTotal/3);
+            int contaInteira = (contaTotal/3);
+            float centavos = (conta3-contaInteira);
+        
+                if(centavos<=0.30){
+                    printf("Carlos pagara: R$ %i\nAndre pagara: R$ %i\nFelipe pagara: R$ %.2f\n",contaInteira,contaInteira,(contaInteira+(centavos*3)));
+                }else{
+                    printf("Carlos pagara: R$ %.2f\nAndre pagara: R$ %.2f\nFelipe pagara: R$ %.2f\n",conta3,conta3,conta3);
+                }
+            return 0;
+        }
+
+
+Questão 10:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+        
+            int trap1, trap2, trap3;
+            int qua;
+            int ret1, ret2;
+            int cir;
+            int tri1, tri2;
+        
+                    printf("Area do trapezio:\n");
+                    printf("Informe o valor da base maior: ");
+                    scanf("%i", &trap1);
+                    printf("Informe o valor da base menor: ");
+                    scanf("%i", &trap2);
+                    printf("Informe o valor da altura: ");
+                    scanf("%i", &trap3);
+        
+                    printf("\nArea do quadrado: \n");
+                    printf("Informe o valor de um dos lados: ");
+                    scanf("%i", &qua);
+        
+                    printf("\nArea do retangulo: \n");
+                    printf("Informe o valor da largura: ");
+                    scanf("%i", &ret1);
+                    printf("Informe o valor da altura: ");
+                    scanf("%i", &ret2);
+        
+                    printf("\nArea do circulo: \n");
+                    printf("Informe o valor do raio: ");
+                    scanf("%i", &cir);
+        
+        
+                    printf("\nArea do triangulo: \n");
+                    printf("Informe o valor da base: ");
+                    scanf("%i", &tri1);
+                    printf("Informe o valor da altura: ");
+                    scanf("%i", &tri2);
+        
+            float trapezio = (((trap1+trap2)*trap3)/2);
+            float quadrado = (qua*qua);
+            float retangulo = (ret1*ret2);
+            float circulo = ((cir*cir)*3.14);
+            float triangulo = ((tri1*tri2)/2);
+        
+                        printf("\n\nA area do trapezio e: %.2f\n", trapezio);
+                        printf("A area do quadrado e: %.2f\n", quadrado);
+                        printf("A area do retangulo e: %.2f\n", retangulo);
+                        printf("A area do circulo e: %.2f\n", circulo);
+                        printf("A area do triangulo e: %.2f\n", triangulo);
+        
+                 if (trapezio > quadrado && trapezio > retangulo && trapezio > circulo && trapezio > triangulo) {
+                printf("O trapezio tem a maior area.\n");
+            } else if (quadrado > retangulo && quadrado > circulo && quadrado > triangulo) {
+                printf("O quadrado tem a maior area.\n");
+            } else if (retangulo > circulo && retangulo > triangulo) {
+                printf("O retangulo tem a maior area.\n");
+            } else if (circulo > triangulo) {
+                printf("O circulo tem a maior area.\n");
+            } else {
+                printf("O triangulo tem a maior area.\n");
+            }
+        
+            return 0;
+        }
+
+
+Questão 11:
