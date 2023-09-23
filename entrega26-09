@@ -409,3 +409,523 @@ Questão 10:
 
 
 Questão 11:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int vetor[12];
+        
+            int mesI;
+            int mesF;
+            int anoI;
+            int anoF;
+            int dias;
+        
+            vetor[0] = 31;
+            vetor[1] = 28;
+            vetor[2] = 31;
+            vetor[3] = 30;
+            vetor[4] = 31;
+            vetor[5] = 30;
+            vetor[6] = 31;
+            vetor[7] = 31;
+            vetor[8] = 30;
+            vetor[9] = 31;
+            vetor[10] = 30;
+            vetor[11] = 31;
+        
+            scanf("%i", &mesI);
+            scanf("%i", &anoI);
+            scanf("%i", &mesF);
+            scanf("%i", &anoF);
+        
+            if(anoF < anoI){
+                printf("\nImpossivel realizar o calculo. Anos e/ou Meses insconsistentes");
+            }
+            else if(mesI < 1 || mesF < 1 || anoI < 1 || anoF < 1){
+                printf("\nImpossivel realizar o calculo. Anos e/ou Meses insconsistentes");
+            }
+            else if(mesI > 12 || mesF > 12){
+                printf("\nImpossivel realizar o calculo. Anos e/ou Meses insconsistentes");
+            }
+        
+            else if(mesI <= mesF){
+                for(int i = mesI-1; i < mesF; i++){
+                    dias += vetor[i];
+                }
+                dias += (anoF*365) - (anoI*365);
+                printf("\n\n%i",dias);
+            }
+            else if(mesI > mesF){
+                for(int i = mesI-1; i < 12; i++){
+                    //printf("\n%i", vetor[i]);
+                    dias += vetor[i];
+                    if (i == 11){
+                        for(int i = 0; i < mesF; i++){
+                        //printf("\n%i", vetor[i]);
+                        dias += vetor[i];
+                    }
+        
+                    }
+                }
+                if((anoF - anoI) >= 2){
+                    dias += ((anoF*365) - (anoI*365)) - 365;
+                }
+                printf("\n\n%i",dias);
+            }
+        
+        
+            return 0;
+        }
+
+
+Questao12:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            float sucoPronto,agua,suco,percentual,porcemSuco,porcemAgua,percentual2;
+        
+                printf("Digite a quantidade de lts de suco necessaria: ");
+                scanf("%f",&sucoPronto);
+                printf("Digite o percentual (%%) de concentracao da agua: ");
+                scanf("%f",&agua);
+                printf("Digite o percentual (%%) de concentracao de suco: ");
+                scanf("%f",&suco);
+        
+            percentual = 100;
+            percentual2 = (suco+agua);
+            porcemSuco = ((sucoPronto*suco)/percentual);
+            porcemAgua = ((sucoPronto*agua)/percentual);
+        
+            if(percentual>percentual2){
+                fflush(stdin);
+        
+                char resposta;
+        
+                printf("\nO percentual calculado foi de %.2f%%. Deseja enquadrar os valores em escala de 100%%?\n[s|n]\n", (suco+agua));
+                scanf("%s",&resposta);
+        
+                    switch(resposta){
+                    case 's':
+                        percentual = (suco+agua);
+                        printf("\nSera necessario para fazer %.2f lts de suco de maracuja:\n%.2f lts de agua\n%.2f lts de suco concentrado de maracuja",sucoPronto,((sucoPronto*agua)/percentual),((sucoPronto*suco)/percentual));
+                    default:
+                        printf("\nValores da concentracao incorretos. Processo finalizado!\n");
+                }
+            }else if(percentual==percentual2){
+                printf("\nSera necessario para fazer %.2f lts de suco de maracuja:\n%.2f lts de agua\n%.2f lts de suco concentrado de maracuja\n",sucoPronto,porcemAgua,porcemSuco);
+            }else{
+                printf("\nValores de concentracao incorretos. Processo finalizado!\n");
+            }
+        
+            return 0;
+        }
+
+
+Questao13:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int frango;
+            float chipAl,chipId;
+        
+                printf("Digite a quantidade de frangos: ");
+                scanf("%i",&frango);
+                printf("Digite o valor do chip de alimentacao: ");
+                scanf("%f",&chipAl);
+                printf("Digite o valor do chip de identificacao: ");
+                scanf("%f",&chipId);
+        
+            float diferenca1 = fabs(((chipId-chipAl)/chipAl)*100);
+            float diferenca2 = fabs(((chipAl-chipId)/chipId)*100);
+            float valorAl = ((frango*chipAl)*2);
+            float valorId = (frango*chipId);
+        
+                if(diferenca1<=20&&chipAl>chipId){
+                    printf("\n\nA quantidade do chip de identificao sofreu aumento de 20%% de %i unidades para %.f unidades",frango,(frango*1.2));
+                    printf("\n\nO valor total para identificar os frangos e: ");
+                    printf("\nChip Alimentacao = R$ %.2f", valorAl);
+                    printf("\nChip de Identificacao = R$ %.2f - Adicional de 20%% = R$ %.2f", valorId,(valorId*0.2));
+                    printf("\n\nValor total = R$ %.2f\n\n", (valorAl+(valorId*1.2)));}
+                 else if(diferenca2<=20&&chipAl>chipId){
+                    printf("\n\nA quantidade do chip de identificao sofreu aumento de 20%% de %i unidades para %.f unidades",frango,(frango*1.2));
+                    printf("\n\nO valor total para identificar os frangos e: ");
+                    printf("\nChip Alimentacao = R$ %.2f", valorAl);
+                    printf("\nChip de Identificacao = R$ %.2f - Adicional de 20%% = R$ %.2f", valorId,(valorId*0.2));
+                    printf("\n\nValor total = R$ %.2f\n\n", (valorAl+(valorId*1.2)));}
+        
+        
+                else if(diferenca1<=20&&chipAl<chipId){
+                    printf("\n\nA quantidade do chip de alimentacao sofreu aumento de 20%% de %i unidades para %.f unidades",(frango*2),(frango*2.4));
+                    printf("\n\nO valor total para identificar os frangos e: ");
+                    printf("\nChip Alimentacao = R$ %.2f -  Adicional de 20%% = R$ %.2f", valorAl,(valorAl*0.2));
+                    printf("\nChip de Identificacao = R$ %.2f", valorId);
+                    printf("\n\nValor total = R$ %.2f\n\n", (valorId+(valorAl*1.2)));}
+                else if(diferenca2<=20&&chipAl<chipId){
+                    printf("\n\nA quantidade do chip de alimentacao sofreu aumento de 20%% de %i unidades para %.f unidades",(frango*2),(frango*2.4));
+                    printf("\n\nO valor total para identificar os frangos e: ");
+                    printf("\nChip Alimentacao = R$ %.2f -  Adicional de 20%% = R$ %.2f", valorAl,(valorAl*0.2));
+                    printf("\nChip de Identificacao = R$ %.2f", valorId);
+                    printf("\n\nValor total = R$ %.2f\n\n", (valorId+(valorAl*1.2)));}
+        
+        
+                else{
+                        printf("\n\nO valor total para identificar os frangos e: ");
+                        printf("\nChip Alimentacao = R$ %.2f", valorAl);
+                        printf("\nChip de Identificacao = R$ %.2f", valorId);
+                        printf("\n\nValor total = R$ %.2f\n\n",valorId+valorAl);}
+        
+        
+        
+        
+        
+        
+            return 0;
+        }
+
+
+Questao14:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int dia;
+            int mes;
+        
+            int diaResultado = 0;
+        
+            printf("Digite o dia: ");
+            scanf("%i", &dia);
+            printf("Digite o mes: ");
+            scanf("%i", &mes);
+        
+            diaResultado = ((mes*30) - (30 - dia));
+        
+        
+            if(mes > 1){
+              diaResultado += 1;
+            }
+            if(mes > 2){
+              diaResultado -= 2;
+            }
+            if(mes > 3){
+              diaResultado += 1;
+            }
+            if(mes > 4){
+              diaResultado += 0;
+            }
+            if(mes > 5){
+              diaResultado += 1;
+            }
+            if(mes > 6){
+              diaResultado += 0;
+            }
+            if(mes > 7){
+              diaResultado += 1;
+            }
+            if(mes > 8){
+              diaResultado += 1;
+            }
+            if(mes > 9){
+              diaResultado += 0;
+            }
+            if(mes > 10){
+              diaResultado += 1;
+            }
+            if(mes > 11){
+              diaResultado += 0;
+            }
+            if(mes > 12){
+              diaResultado += 1;
+            }
+        
+        
+            if(mes > 12){
+              printf("Impossivel realizar o calculo. Anos e Meses inconsistentes");
+            }
+            else if(mes == 1 && dia > 31 || mes == 3 && dia > 31 || mes == 5 && dia > 31 || mes == 7 && dia > 31 || mes == 8 && dia > 31 || mes == 10 && dia > 31 || mes == 12 && dia > 31){
+              printf("Impossivel realizar o calculo. Anos e Meses inconsistentes");
+            }
+            else if(mes == 4 && dia > 30 || mes == 6 && dia > 30 || mes == 9 && dia > 30 || mes == 11 && dia > 30){
+              printf("Impossivel realizar o calculo. Anos e Meses inconsistentes");
+            }
+            else if(mes == 2 && dia > 28){
+              printf("Impossivel realizar o calculo. Anos e Meses inconsistentes");
+            }
+            else{
+              printf("\nQuantidade de dias %i", diaResultado);
+            }
+        
+            return 0;
+        }
+
+
+Questao15:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main() 
+        {
+          int ml350;
+          int ml600;
+          int lts2;
+          int ltsTotal;
+          
+          printf("Digite a quantidade de latas de 350ml: ");
+          scanf("%i", &ml350);
+          
+          printf("Digite a quantidade de garrafas de 600ml: ");
+          scanf("%i", &ml600);
+          
+          printf("Digite a quantidade de garrafas de 2lts: ");
+          scanf("%i", &lts2);
+          
+          ltsTotal = ((ml350 * 350) + (ml600 * 600) + (lts2 * 2000)) / 1000;
+        
+          printf("\nA quantidade total de de litros e: %i", ltsTotal);
+        
+          if(ml600 * 0.09 >= ml350 * 0.15){
+            printf("\n\nConsidere substituir a compra de:\n%i latas de 350 ml por %.2f garrafas de 600ml e oferecer uma promocao", ml350, (float)ml350*350/600);
+          }
+          
+          return 0;
+        }
+
+
+Questao16:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int numero;
+        
+            printf("Digite um numero de ate 4 digitos positivo: ");
+            scanf("%i",&numero);
+        
+            int milhar,centena,dezena,unidade;
+        
+            milhar = numero/1000;
+            centena = ((numero%1000)/100);
+            dezena = ((numero%100)/10);
+            unidade = (numero%10);
+        
+                if (numero<10&&numero>=0){
+                    printf("\nUnidades: %i\n", unidade);
+                }else if(numero>=10&&numero<100){
+                printf("\nDezenas: %i\nUnidades: %i\n",dezena,unidade);
+                }else if(numero>=100&&numero<1000){
+                printf("\nCentenas: %i\nDezenas: %i\nUnidades: %i\n",centena,dezena,unidade);
+                }else if(numero>=1000&&numero<10000){
+                printf("\nMilhares: %i\nCentenas: %i\nDezenas: %i\nUnidades: %i\n",milhar,centena,dezena,unidade);
+                }else{
+                printf("\nNumero invalido!\n");
+                }
+        
+            return 0;
+        }
+
+
+Questao17:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+        
+            int sand;
+        
+            printf("Digite a quantidade de sanduiches: ");
+            scanf("%i", &sand);
+        
+            float muss = (sand*0.100);
+            float pres = (sand*0.050);
+            float carn = (sand*0.120);
+        
+            printf("\nPara produzir %i de sanduiches, serao necessarios:\n\n", sand);
+            printf("%.3f kgs de mussarela\n", muss);
+            printf("%.3f kgs de presunto\n", pres);
+            printf("%.3f kgs de carne\n", carn);
+        
+            float quest1;
+        
+            printf("\nQual a quantidade em Kgs disponivel de presunto? ");
+            scanf("%f",&quest1);
+        
+            if(quest1<pres){
+                int sand2=quest1*20;
+                int sandFal=sand-sand2;
+                float mort=(sandFal*0.070);
+                float presSobra=(quest1-(sand2*0.050));
+                printf("\nSera possivel produzir apenas %i sanduiches com presunto", sand2);
+                printf("\nSera necessario %.3f kgs de mortadela para produzir %i sanduiches restantes\n",mort,sandFal);
+                printf("\nDa quantidade de presunto disponivel sobrara %.3f kgs\n", presSobra);
+            }
+        
+            return 0;
+        }
+
+
+Questao18:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <locale.h>
+        
+        int main()
+        {
+        
+            setlocale(LC_ALL,"Portuguese");
+        
+        
+            int normalHr;
+            int extraHr;
+            int dep;
+        
+            printf("Digite a quantidade total de horas normais: ");
+            scanf("%i", &normalHr);
+        
+            printf("Digite a quantidade total de horas extras: ");
+            scanf("%i", &extraHr);
+        
+            printf("Digite a quantidade total de dependentes menores que 6 anos de idade: ");
+            scanf("%i", &dep);
+        
+            float valorHr = normalHr*10;
+            float valorEx = extraHr*15;
+            float valorDep = dep*90;
+            float salLiq = (valorHr-(valorHr*0.11));
+        
+            if(dep<=3){
+                printf("\nHoras normais: R$ %.2f", valorHr);
+                printf("\nAdicional de Horas extras: R$ %.2f", valorEx);
+                printf("\nAdicional de Dependentes: R$ %.2f", valorDep);
+                printf("\nSalário líquido (Hrs normais - desconto): %.2f ", salLiq);
+                printf("\nSalário final: %.2f \n",salLiq+valorDep+valorEx);
+            }else{
+            printf("\nHoras normais: R$ %.2f", valorHr);
+                float valorDep2=90*3;
+                printf("\nAdicional de Horas extras: R$ %.2f", valorEx);
+                printf("\nAdicional de Dependentes: R$ %.2f", valorDep2);
+                printf("\nSalário líquido (Hrs normais - desconto): %.2f ", salLiq);
+                printf("\nSalário final: %.2f \n",(salLiq+valorDep2+valorEx));
+                printf("\n\nSálario calculado para apenas 3 dependentes.\nOs demais %i não receberão auxílio.\n",(dep-3));
+        
+            }
+        
+            return 0;
+        }
+
+
+Questao19:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <locale.h>
+        
+        int main()
+        {
+            setlocale(LC_ALL,"Portuguese");
+        
+            float vendaPassada;
+            float prod1 = 150;
+            float prod2 = 220;
+            float prod3 = 97;
+            int codProduto;
+        
+                printf("Digite o valor do faturamento do mês anterior: R$ ");
+                scanf("%f", &vendaPassada);
+        
+                printf("\n=== Codigo dos Produtos ===\nProduto 1: 101\nProduto 2: 122\nProduto 3: 163\n\n");
+                printf("Digite o codigo do produto que se deseja bater a meta: ");
+                scanf("%d",&codProduto);
+        
+            float meta = vendaPassada+(vendaPassada*0.20);
+            float diferenca = (meta-vendaPassada);
+        
+            switch(codProduto){
+            case 150:
+                 printf("\nA meta do próximo mês é de: R$ %.2f", meta);
+                 printf("\nUm aumento de: R$ %.2f", diferenca);
+                 printf("\nQuantidade de peças a mais a serem vendidas para atigirmos a meta: \n\n");
+                 printf("Produto 150: %.2f\n", (diferenca/prod1));
+                 break;
+            case 220:
+                 printf("\nA meta do próximo mês é de: R$ %.2f", meta);
+                 printf("\nUm aumento de: R$ %.2f", diferenca);
+                 printf("\nQuantidade de peças a mais a serem vendidas para atigirmos a meta: \n\n");
+                 printf("Produto 220: %.2f\n", (diferenca/prod2));
+                 break;
+            case 163:
+                 printf("\nA meta do próximo mês é de: R$ %.2f", meta);
+                 printf("\nUm aumento de: R$ %.2f", diferenca);
+                 printf("\nQuantidade de peças a mais a serem vendidas para atigirmos a meta: \n\n");
+                 printf("Produto 220: %.2f\n", (diferenca/prod3));
+                 break;
+            default:
+                printf("\nCodigo de produto nao encontrado!\n\n");
+            }
+        
+            return 0;
+        }
+
+
+Questao20:
+
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main()
+        {
+            int pao;
+            int broa;
+            float reforma;
+            float valorPao = 0.12;
+            float valorBroa = 1.60;
+        
+                printf("Digite a quantidade em unidades de paes vendidos: ");
+                scanf("%i", &pao);
+                printf("Digite a quantidade em unidades de broas vendidas: ");
+                scanf("%i", &broa);
+                printf("Digite o valor da reforma: R$ ");
+                scanf("%f", &reforma);
+        
+            float vendaDia = (pao*valorPao)+(broa*valorBroa);
+            float dias = ceil(reforma/(vendaDia*0.10));
+        
+                printf("\nFaturamento com a venda de broas: R$ %.2f", (float)(broa*valorBroa));
+                printf("\nFaturamento com a venda de paes: R$ %.2f", (float)(pao*valorPao));
+                printf("\nFaturamento diario (paes + broas): R$ %.2f", vendaDia);
+                printf("\nValor para deposito na poupanca (10%%): R$ %.2f", (vendaDia*0.10));
+                printf("\nPara pagar a reforma serao necessarios: %.0f dias\n", dias);
+        
+            if(dias>120){
+                dias = (reforma/120);
+                printf("\n\nPara realizar a reforma em 120 dias sera necessario depositar diariamente R$ %.2f\n",dias);
+            }
+        
+            return 0;
+        }
