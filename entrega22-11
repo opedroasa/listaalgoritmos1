@@ -1,0 +1,47 @@
+IDE: CodeBlocks
+Linguagem: C
+Universidade Anhanguera Uberlândia
+Aluno: Pedro Antonio da Silva Alexandre & Gabriel Nascimento Barbosa
+RA: 372114867412
+Curso: Sistemas de informação - 2º Período
+
+Questao 1:
+
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+        typedef struct regEndereco{
+            char rua[100];
+            char bairro[40];
+            char cidade[40];
+            char estado[40];
+            }regEndereco;
+    
+        typedef struct pessoa{
+            char nome[100];
+            regEndereco endereco;
+            float salario;
+            char identidade[10];
+            char cpf[11];
+            char estadoCivil[10];
+            char telefone[11]; //Ex: 34996691221
+            int idade;
+            char sexo[10];
+             }pessoa;
+    
+    int main()
+    {
+        pessoa pessoa1 = {
+        "Joao Antonio de Souza Pires","Rua teste","Bairro teste","Uberlandia","Minas Gerais",999.0,"123456789","9911122233","Solteiro","34996691221",20,"Masculino"
+        };
+    
+        printf("A nome da pessoa 1 e: %s\nMora no endereco: %s %s, na cidade %s, no estado de %s\nTem um salario de R$ %.2f\n",pessoa1.nome,pessoa1.endereco.rua,pessoa1.endereco.bairro,pessoa1.endereco.cidade,pessoa1.endereco.estado,pessoa1.salario);
+        printf("Seu numero de identidade e: %s\nSeu numero de CPF e: %s\nAtualmente seu estado civil e: %s\nTelefone: %s\nTem %i anos de idade\nE do sexo %s\n\n",pessoa1.identidade,pessoa1.cpf,pessoa1.estadoCivil,pessoa1.telefone,pessoa1.idade,pessoa1.sexo);
+        return 0;
+    }
+
+
+Questao 2:
+
+
