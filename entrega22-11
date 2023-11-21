@@ -8,40 +8,152 @@ Curso: Sistemas de informação - 2º Período
 Questao 1:
 
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    
-        typedef struct regEndereco{
-            char rua[100];
-            char bairro[40];
-            char cidade[40];
-            char estado[40];
-            }regEndereco;
-    
-        typedef struct pessoa{
-            char nome[100];
-            regEndereco endereco;
-            float salario;
-            char identidade[10];
-            char cpf[11];
-            char estadoCivil[10];
-            char telefone[11]; //Ex: 34996691221
-            int idade;
-            char sexo[10];
-             }pessoa;
-    
-    int main()
-    {
-        pessoa pessoa1 = {
-        "Joao Antonio de Souza Pires","Rua teste","Bairro teste","Uberlandia","Minas Gerais",999.0,"123456789","9911122233","Solteiro","34996691221",20,"Masculino"
-        };
-    
-        printf("A nome da pessoa 1 e: %s\nMora no endereco: %s %s, na cidade %s, no estado de %s\nTem um salario de R$ %.2f\n",pessoa1.nome,pessoa1.endereco.rua,pessoa1.endereco.bairro,pessoa1.endereco.cidade,pessoa1.endereco.estado,pessoa1.salario);
-        printf("Seu numero de identidade e: %s\nSeu numero de CPF e: %s\nAtualmente seu estado civil e: %s\nTelefone: %s\nTem %i anos de idade\nE do sexo %s\n\n",pessoa1.identidade,pessoa1.cpf,pessoa1.estadoCivil,pessoa1.telefone,pessoa1.idade,pessoa1.sexo);
-        return 0;
-    }
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+            typedef struct regEndereco{
+                char rua[100];
+                char bairro[40];
+                char cidade[40];
+                char estado[40];
+                }regEndereco;
+        
+            typedef struct pessoa{
+                char nome[100];
+                regEndereco endereco;
+                float salario;
+                char identidade[10];
+                char cpf[11];
+                char estadoCivil[10];
+                char telefone[11]; //Ex: 34996691221
+                int idade;
+                char sexo[10];
+                 }pessoa;
+        
+        int main()
+        {
+            pessoa pessoa1 = {
+            "Joao Antonio de Souza Pires","Rua teste","Bairro teste","Uberlandia","Minas Gerais",999.0,"123456789","9911122233","Solteiro","34996691221",20,"Masculino"
+            };
+        
+            printf("A nome da pessoa 1 e: %s\nMora no endereco: %s %s, na cidade %s, no estado de %s\nTem um salario de R$ %.2f\n",pessoa1.nome,pessoa1.endereco.rua,pessoa1.endereco.bairro,pessoa1.endereco.cidade,pessoa1.endereco.estado,pessoa1.salario);
+            printf("Seu numero de identidade e: %s\nSeu numero de CPF e: %s\nAtualmente seu estado civil e: %s\nTelefone: %s\nTem %i anos de idade\nE do sexo %s\n\n",pessoa1.identidade,pessoa1.cpf,pessoa1.estadoCivil,pessoa1.telefone,pessoa1.idade,pessoa1.sexo);
+            return 0;
+        }
 
 
 Questao 2:
 
 
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        typedef struct registro{
+            int matri;
+            char nome[100];
+            float prova1,prova2,prova3;
+        }registro;
+        
+        int main()
+        {
+          registro aluno[5];
+        
+           for (int i=0;i<5;++i) {
+                printf("Digite os dados do aluno %d:\n",i+1);
+                printf("Matricula: ");
+                scanf("%d", &aluno[i].matri);
+                fflush(stdin);
+                printf("Nome: ");
+                gets(aluno[i].nome);
+                printf("Nota da primeira prova: ");
+                scanf("%f", &aluno[i].prova1);
+                printf("Nota da segunda prova: ");
+                scanf("%f", &aluno[i].prova2);
+                printf("Nota da terceira prova: ");
+                scanf("%f", &aluno[i].prova3);
+                printf("\n");
+        }
+               int indiceProva1=0;
+                    for(int i=0;i<5;i++){
+                        if(aluno[i].prova1>aluno[indiceProva1].prova1){
+                        indiceProva1=i;
+                    }
+               }
+        
+               int indiceMaiorMedia=0;
+                    for(int i=0;i<5;i++){
+                        float mediaAtual=((aluno[i].prova1+aluno[i].prova2+aluno[i].prova3)/3);
+                        float mediaMaior=((aluno[indiceMaiorMedia].prova1+aluno[indiceMaiorMedia].prova2+aluno[indiceMaiorMedia].prova3)/3);
+                            if(mediaAtual>mediaMaior){
+                                indiceMaiorMedia=i;
+                            }
+                    }
+        
+                int indiceMenorMedia=0;
+                    for(int i=0;i<5;i++){
+                        float mediaAtual=((aluno[i].prova1+aluno[i].prova2+aluno[i].prova3)/3);
+                        float mediaMenor=((aluno[indiceMenorMedia].prova1+aluno[indiceMenorMedia].prova2+aluno[indiceMenorMedia].prova3)/3);
+                            if(mediaAtual>mediaMenor){
+                                indiceMenorMedia=i;
+                            }
+                    }
+        
+        
+            printf("O aluno com a maior nota da primeira prova foi o: %s\n",aluno[indiceProva1].nome);
+            printf("O aluno com a maior media nas 3 provas foi o: %s\n",aluno[indiceMaiorMedia].nome);
+            printf("O aluno com a menor media nas 3 provas foi o: %s\n",aluno[indiceMenorMedia].nome);
+            for(int i=0;i<5;i++){
+                         float mediaAtual=((aluno[i].prova1+aluno[i].prova2+aluno[i].prova3)/3);
+                            if(mediaAtual>=6){
+                                printf("O aluno %s foi APROVADO!\n",aluno[i].nome);
+                            }else{
+                                printf("O aluno %s foi REPROVADO!\n",aluno[i].nome);
+                            }
+                    }
+        
+            return 0;
+        }
+
+
+Questao 3:
+
+
+            #include <stdio.h>
+            #include <stdlib.h>
+            
+            typedef struct registro{
+                        int matri,codDisc;
+                        char nome[50];
+                        float prova1,prova2;
+                    }registro;
+            
+            int main()
+            {
+                registro aluno[10];
+                int count=0;
+                int decisao=0;
+            
+                do{
+                            if(count<10){
+                                  printf("\nAluno %i\nMatricula: ",count+1);
+                                  scanf("%i",&aluno[count].matri);
+                                  fflush(stdin);
+                                  printf("Nome: ");
+                                  gets(aluno[count].nome);
+                                  printf("Codigo da disciplina: ");
+                                  scanf("%i",&aluno[count].codDisc);
+                                  printf("Nota da primeira prova: ");
+                                  scanf("%f", &aluno[count].prova1);
+                                  printf("Nota da segunda prova: ");
+                                  scanf("%f", &aluno[count].prova2);
+                                  count++;
+                            } else{
+                                 printf("\nLimite de cadastro atingido! [%i]",count);
+                                 break;
+                            }  printf("\nAtualmente a turma tem %i aluno(s), deseja cadastrar um aluno? (LIMITE DE 10)\n[1] SIM\n[0] NAO\n",count);
+                        scanf("%i",&decisao);
+                }while(decisao==1);
+                    printf("\nCadastros realizados com sucesso!\n");
+                   
+                return 0;
+            }
